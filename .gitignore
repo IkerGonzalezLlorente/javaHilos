@@ -1,0 +1,13 @@
+.Xauthority
+.bash_history
+.bash_logout
+.bashrc
+.cache/
+.config/
+.profile
+.ssh/
+.sudo_as_admin_successful
+.vscode-server/
+.vscode/
+.wget-hsts
+

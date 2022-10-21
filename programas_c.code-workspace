@@ -1,0 +1,16 @@
+{
+	"folders": [
+		{
+			"path": "./procesos/programas_c"
+		},
+		{
+			"path": "./../victor/DAM2/PSP"
+		}
+	],
+	"settings": {
+		"files.associations": {
+			"stdio.h": "c",
+			"stdlib.h": "c"
+		}
+	}
+}
