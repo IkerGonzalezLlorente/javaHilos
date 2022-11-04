@@ -11,6 +11,7 @@
 		"files.associations": {
 			"stdio.h": "c",
 			"stdlib.h": "c"
-		}
+		},
+		"liveServer.settings.multiRootWorkspaceName": "programas_c"
 	}
 }

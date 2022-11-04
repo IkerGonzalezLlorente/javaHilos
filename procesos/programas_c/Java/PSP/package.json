@@ -1,0 +1,19 @@
+{
+  "name": "psp",
+  "version": "1.0.0",
+  "description": "TS",
+  "main": "index.js",
+  "directories": {
+    "lib": "lib"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "TranspileTSDev": "npx tsc --watch",
+    "TranspileTS": "npx tsc --watch"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "typescript": "^4.8.4"
+  }
+}
