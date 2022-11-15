@@ -1,4 +1,5 @@
 public class Cuenta  {
+    // * Parámetro estático que controla el saldo de la cuenta
      private  int saldo ;
 
     // Constructor 
@@ -12,24 +13,29 @@ public class Cuenta  {
     /**
      * @return
      */
-    public int getSaldo() {
+    synchronized public int getSaldo() {
         return saldo;
     }  //devuelve el  saldo
 
+
+
     /**
-     * @param cantidad
+     * @param cant
      */
-    private void restar (int cantidad)
-    {  //se resta la cantidad al saldo 
-        this.saldo = this.saldo - cantidad ;
+    synchronized public void ingresar(int cant) {
+        this.saldo = this.saldo + cant;
     }
+    
+
+
+
     /**
      * @param cant
      * @param nom
      */
-    synchronized public void RetirarDinero (int cant,  String nom) {
-        if  (getSaldo()  >= cant) {
-            System.out.println("SE VA A RETIRAR SALDO (ACTUAL ES:  " + getSaldo()+")");
+    synchronized void procesarOperacion(int cant, String nom){
+        if  (getSaldo() >= cant) {
+        System.out.println("SE VA A RETIRAR SALDO (ACTUAL ES:  " + getSaldo()+")");
             try  {
                 Thread.sleep(500);
             }  
@@ -40,9 +46,27 @@ public class Cuenta  {
             this.restar(cant);
             System.out.println(nom + " retira => " + cant + " ACTUAL(" + getSaldo() + ")" );
         }
-        else {
-            System.out.println(nom + " No puede retirar dinero,  NO HAY  SALDO(" + getSaldo()+ ")" );
+        else{
+                System.out.println("Cantidad insuficiente en cuenta:" + this.getSaldo());
         }
+    }
+
+
+
+
+    /**
+     * @param cantidad
+     */
+    synchronized private void restar (int cantidad)
+    {  //se resta la cantidad al saldo 
+        this.saldo = this.saldo - cantidad ;
+    }
+    /**
+     * @param cant
+     * @param nom
+     */
+    public void RetirarDinero (int cant,  String nom) {
+        this.procesarOperacion(cant, nom);
         if (getSaldo()  <  0) { 
             System.out.println("SALDO NEGATIVO =>  "  + getSaldo());
         }

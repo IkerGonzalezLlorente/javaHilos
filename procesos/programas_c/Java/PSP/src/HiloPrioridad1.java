@@ -7,7 +7,7 @@ class HiloPrioridad1 extends Thread  {
     public void pararHilo()  { 
     this.stopHilo = true;
     }
-    public void run()  {
+    public void run() {
     while (!stopHilo){
         this.c++; 
     }  
