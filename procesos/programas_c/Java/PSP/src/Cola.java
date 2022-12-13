@@ -1,6 +1,29 @@
 public  class Cola  {
+    private String [] consumidoresAlaEspera = new String[Consumidorc.n];
+    private int []  cola;
+    
+    private int tamanoCola;
     private  int numero;
     private boolean disponible =  false;//inicialmente  cola vacia
+    public Cola(int n){
+        this.tamanoCola = n;        
+    }
+
+    public int[] getCola() {
+        return this.cola;
+    }
+
+    public void setCola(int[] cola) {
+        this.cola = cola;
+    }
+
+    public int getTamano(){
+        return this.tamanoCola;
+    }
+    public void setTamano(int n){
+        this.tamanoCola = n;
+    }
+
     synchronized public int get() throws InterruptedException  {
     while(!disponible){
         wait();

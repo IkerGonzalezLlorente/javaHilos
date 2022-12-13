@@ -1,11 +1,14 @@
 public class Productorc extends Thread {
     private Cola cola; 
     private  int n;
+
     public Productorc(Cola c,  int n, String no)  { 
         super(no);
         cola = c; 
         this.n = n;
     }
+
+    
     public void run()  {
     for  (int  i=  0;  i <  21;  i++)  {
     try {

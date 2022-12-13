@@ -1,10 +1,10 @@
 public class Consumidorc extends Thread  {
     private Cola cola; 
-    private  int n;
+    public static int n;
     public Consumidorc(Cola c,  int n, String no)  {
         super(no); 
         cola = c; 
-        this.n = n;
+        n++;
     }
     public void run()  {
     int valor =  0;
